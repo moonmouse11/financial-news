@@ -1,0 +1,41 @@
+<?php
+
+namespace App\Models\Articles;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Article extends Model
+{
+    use SoftDeletes;
+
+    protected $guarded = ['id'];
+    protected $fillable = [
+        'title',
+        'body',
+        'slug',
+        'image',
+        'complexity_id',
+        'author_id'
+    ];
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
+
+    public function tags()
+    {
+        return $this->hasMany(ArticleTags::class);
+    }
+
+    public function complexities()
+    {
+        return $this->belongsTo(Complexity::class);
+    }
+
+    public function photos()
+    {
+        $this->hasMany(Photo::class);
+    }
+}

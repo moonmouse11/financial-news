@@ -13,7 +13,7 @@
                 <div class="flex-shrink max-w-full w-full lg:w-1/2 pb-1 lg:pb-0 lg:pr-1">
                     <div class="relative hover-img max-h-98 overflow-hidden">
                         <a href="#">
-                            <img class="max-w-full w-full mx-auto h-auto" src="src/img/dummy/img1.jpg"
+                            <img class="max-w-full w-full mx-auto h-auto" src="{{Vite::asset('resources/views/tailnews/src/img/dummy/img1.jpg')}}"
                                  alt="Image description">
                         </a>
                         <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">

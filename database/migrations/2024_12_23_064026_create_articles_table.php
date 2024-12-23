@@ -20,6 +20,7 @@ return new class extends Migration {
             $table->string('title');
             $table->text('body');
             $table->string('slug')->unique();
+            $table->string('image')->nullable(true);
             $table->foreignId('complexity_id')->nullable(true)->references('id')
                 ->on('complexity')->onDelete('set null');
             $table->foreignId('author_id')->references('id')
@@ -39,6 +40,13 @@ return new class extends Migration {
             $table->foreignId('tag_id')->references('id')
                 ->on('tags')->cascadeOnDelete();
         });
+
+        Schema::create('photos', static function (Blueprint $table) {
+            $table->id();
+            $table->string('path');
+            $table->foreignId('article_id')->references('id')
+                ->on('articles')->cascadeOnDelete();
+        });
     }
 
     /**
@@ -46,6 +54,7 @@ return new class extends Migration {
      */
     public function down(): void
     {
+        Schema::dropIfExists('photos');
         Schema::dropIfExists('article_tag');
         Schema::dropIfExists('tags');
         Schema::dropIfExists('articles');
