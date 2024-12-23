@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -22,13 +21,11 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->text('body');
-            $table->softDeletes();
-        });
-
-        Schema::create('chapters', static function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('description');
+            $table->integer('parent_id')->nullable();
+            $table->string('slug')->unique();
+            $table->foreignId('author_id')->references('id')
+                ->on('users')->cascadeOnDelete();
+            $table->timestamps();
             $table->softDeletes();
         });
 
@@ -37,19 +34,14 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('image');
-            $table->foreignId('author_id')->references('id')->on('users');
-            $table->foreignId('category_id')->references('id')->on('categories')->onDelete('set null');
-            $table->foreignId('chapter_id')->references('id')->on('chapters')->onDelete('set null');
+            $table->foreignId('author_id')->references('id')
+                ->on('users')->cascadeOnDelete();
+            $table->foreignId('category_id')->references('id')
+                ->on('categories')->cascadeOnDelete();
+            $table->foreignId('lesson_id')->references('id')
+                ->on('lessons')->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
-        });
-
-        Schema::table('chapters', function (Blueprint $table) {
-            $table->foreignId('course_id')->references('id')->on('courses')->onDelete('cascade');
-        });
-
-        Schema::table('lessons', function (Blueprint $table) {
-            $table->foreignId('chapter_id')->references('id')->on('chapters')->onDelete('cascade');
         });
 
     }
@@ -59,9 +51,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
-        Schema::dropIfExists('chapters');
-        Schema::dropIfExists('lessons');
         Schema::dropIfExists('courses');
+        Schema::dropIfExists('categories');
+        Schema::dropIfExists('lessons');
     }
 };

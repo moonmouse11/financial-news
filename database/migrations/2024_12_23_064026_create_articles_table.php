@@ -10,11 +10,18 @@ return new class extends Migration {
      */
     public function up(): void
     {
+        Schema::create('complexity', static function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+        });
+
         Schema::create('articles', static function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('body');
             $table->string('slug')->unique();
+            $table->foreignId('complexity_id')->nullable(true)->references('id')
+                ->on('complexity')->onDelete('set null');
             $table->foreignId('author_id')->references('id')
                 ->on('users');
             $table->timestamps();
@@ -42,5 +49,6 @@ return new class extends Migration {
         Schema::dropIfExists('article_tag');
         Schema::dropIfExists('tags');
         Schema::dropIfExists('articles');
+        Schema::dropIfExists('complexity');
     }
 };
