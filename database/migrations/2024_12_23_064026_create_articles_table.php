@@ -8,9 +8,11 @@ return new class extends Migration {
 
     public function up(): void
     {
-        Schema::create('complexity', static function (Blueprint $table) {
+        Schema::create('complexities', static function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('categories', static function (Blueprint $table) {
@@ -28,12 +30,12 @@ return new class extends Migration {
             $table->text('body');
             $table->string('slug')->unique();
             $table->string('image')->nullable(true);
-            $table->foreignId('complexity_id')->nullable(true)->references('id')
-                ->on('complexity')->nullOnDelete();
+            $table->foreignId('complexity_id')->references('id')
+                ->on('complexities')->cascadeOnDelete();
             $table->foreignId('author_id')->references('id')
-                ->on('users');
-            $table->foreignId('category_id')->nullable(true)->references('id')
-                ->on('categories')->nullOnDelete();
+                ->on('users')->cascadeOnDelete();
+            $table->foreignId('category_id')->references('id')
+                ->on('categories')->cascadeOnDelete();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -41,6 +43,8 @@ return new class extends Migration {
         Schema::create('tags', static function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('article_tag', static function (Blueprint $table) {
@@ -64,6 +68,7 @@ return new class extends Migration {
         Schema::dropIfExists('article_tag');
         Schema::dropIfExists('tags');
         Schema::dropIfExists('articles');
-        Schema::dropIfExists('complexity');
+        Schema::dropIfExists('complexities');
+        Schema::dropIfExists('categories');
     }
 };

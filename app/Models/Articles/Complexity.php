@@ -9,9 +9,12 @@ class Complexity extends Model
 {
     use SoftDeletes;
 
+    protected $table = 'complexities';
     protected $guarded = ['id'];
     protected $fillable = [
         'title',
+        'updated_at',
+        'created_at'
     ];
 
     public function article()

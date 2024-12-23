@@ -16,6 +16,7 @@ class Article extends Model
         'slug',
         'image',
         'complexity_id',
+        'category_id',
         'author_id'
     ];
     protected $hidden = [
