@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
     <title>@yield('title'):: Financial News</title>
-    <link rel="stylesheet" href="{{Vite::asset('resources/css/style.css')}}">
+    <link rel="stylesheet" href=" @vite('resources/css/style.css')
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
     <link rel="icon" href="src/img/favicon.jpg">
 </head>
@@ -405,12 +405,12 @@
     </svg>
 </a>
 
-<script src="{{Vite::asset('resources/js/vendors/hc-sticky/dist/hc-sticky.js')}}"></script>
-<script src="{{Vite::asset('resources/js/vendors/glightbox/dist/js/glightbox.min.js')}}"></script>
-<script src="{{Vite::asset('resources/js/vendors/@splidejs/splide/dist/js/splide.min.js')}}"></script>
-<script src="{{Vite::asset('resources/js/@splidejs/splide-extension-video/dist/js/splide-extension-video.min.js')}}"></script>
+<script src="@vite('node_modules/hc-sticky/dist/hc-sticky.js')"></script>
+<script src="@vite('node_modules/glightbox/dist/js/glightbox.min.js')"></script>
+<script src="@vite('node_modules/@splidejs/splide/dist/js/splide.min.js')"></script>
+<script src="@vite('node_modules/@splidejs/splide-extension-video/dist/js/splide-extension-video.min.js')"></script>
 
-<script src="{{Vite::asset('resources/js/theme.js')}}"></script>
+<script src="@vite('resources/js/theme.js')"></script>
 
 </body>
 </html>

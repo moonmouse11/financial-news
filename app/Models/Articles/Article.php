@@ -29,7 +29,7 @@ class Article extends Model
         return $this->hasMany(ArticleTags::class);
     }
 
-    public function complexities()
+    public function complexity()
     {
         return $this->belongsTo(Complexity::class);
     }
@@ -37,5 +37,10 @@ class Article extends Model
     public function photos()
     {
         $this->hasMany(Photo::class);
+    }
+
+    public function category()
+    {
+        $this->belongsTo(Category::class);
     }
 }

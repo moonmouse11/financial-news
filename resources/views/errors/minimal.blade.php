@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
     <title>@yield('title'):: Financial News</title>
-    <link rel="stylesheet" href="{{Vite::asset('resources/css/style.css')}}">
+    <link rel="stylesheet" href=@vite('resources/css/style.css')
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
     <link rel="icon" href="src/img/favicon.jpg">
 </head>
@@ -47,8 +47,6 @@
 
                       <!--dropdown submenu-->
                       <ul class="dropdown-menu absolute left-full right-auto transform top-full z-50 border-b-0 text-left -mt-10 ml-0 mr-0 bg-white border border-gray-100" style="min-width: 12rem;">
-                        <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b bor<body class="text-gray-700 pt-9 sm:pt-10">
-der-gray-100" href="404.html">404</a></li>
                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="../tailnews/author.html">Author</a></li>
                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="../tailnews/category.html">Category</a></li>
                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="../tailnews/search.html">Search</a></li>
@@ -244,10 +242,10 @@ der-gray-100" href="404.html">404</a></li>
           <div class="flex-shrink max-w-full w-full">
             <div class="p-10 text-center">
             	<div class="mb-4 text-center">
-                <h1 class="text-6xl text-gray-800 font-bold mb-2">404</h1>
+                <h1 class="text-6xl text-gray-800 font-bold mb-2">@yield('code')</h1>
                 <span class="inline-block h-0.5 w-20 bg-red-600"></span>
               </div>
-              <h3 class="text-2xl mb-2">Oops! That page can’t be found.</h3>
+              <h3 class="text-2xl mb-2">@yield('message')</h3>
             </div>
           </div>
         </div>

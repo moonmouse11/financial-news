@@ -5,12 +5,10 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
-    /**
-     * Run the migrations.
-     */
+
     public function up(): void
     {
-        Schema::create('categories', static function (Blueprint $table) {
+        Schema::create('subjects', static function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->softDeletes();
@@ -36,8 +34,8 @@ return new class extends Migration {
             $table->string('image');
             $table->foreignId('author_id')->references('id')
                 ->on('users')->cascadeOnDelete();
-            $table->foreignId('category_id')->references('id')
-                ->on('categories')->cascadeOnDelete();
+            $table->foreignId('subject_id')->references('id')
+                ->on('subjects')->cascadeOnDelete();
             $table->foreignId('lesson_id')->references('id')
                 ->on('lessons')->cascadeOnDelete();
             $table->softDeletes();
@@ -46,13 +44,10 @@ return new class extends Migration {
 
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('courses');
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('subjects');
         Schema::dropIfExists('lessons');
     }
 };

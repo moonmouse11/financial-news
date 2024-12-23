@@ -7,9 +7,6 @@ use Illuminate\Database\Seeder;
 
 class ComplexitySeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         (new Complexity([
@@ -28,5 +25,4 @@ class ComplexitySeeder extends Seeder
             'title' => 'Сложный',
         ]))->save();
     }
-
 }

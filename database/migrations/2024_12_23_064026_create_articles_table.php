@@ -5,14 +5,21 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
-    /**
-     * Run the migrations.
-     */
+
     public function up(): void
     {
         Schema::create('complexity', static function (Blueprint $table) {
             $table->id();
             $table->string('title');
+        });
+
+        Schema::create('categories', static function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('slug')->unique();
+            $table->text('description');
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('articles', static function (Blueprint $table) {
@@ -22,9 +29,11 @@ return new class extends Migration {
             $table->string('slug')->unique();
             $table->string('image')->nullable(true);
             $table->foreignId('complexity_id')->nullable(true)->references('id')
-                ->on('complexity')->onDelete('set null');
+                ->on('complexity')->nullOnDelete();
             $table->foreignId('author_id')->references('id')
                 ->on('users');
+            $table->foreignId('category_id')->nullable(true)->references('id')
+                ->on('categories')->nullOnDelete();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -49,9 +58,6 @@ return new class extends Migration {
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('photos');
