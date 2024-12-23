@@ -2,9 +2,10 @@
 
 namespace App\Models\Articles;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Complexity
+class Complexity extends Model
 {
     use SoftDeletes;
 

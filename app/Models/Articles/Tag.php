@@ -2,7 +2,9 @@
 
 namespace App\Models\Articles;
 
-class Tag
+use Illuminate\Database\Eloquent\Model;
+
+class Tag extends Model
 {
     protected $guarded = ['id'];
     protected $fillable = [

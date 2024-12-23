@@ -10,7 +10,13 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         (new User([
-            'title' => 'Простой',
+            'first_name' => 'Админ',
+            'last_name' => 'Админский',
+            'surname' => 'Админович',
+            'email' => 'admin@admin.admin',
+            'email_verified_at' => now(),
+            'is_admin' => true,
+            'password' => ''
         ]))->save();
     }
 }
