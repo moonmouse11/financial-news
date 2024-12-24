@@ -2,6 +2,7 @@
 
 namespace App\Models\Articles;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -43,5 +44,10 @@ class Article extends Model
     public function category()
     {
         $this->belongsTo(Category::class);
+    }
+
+    public function author()
+    {
+        $this->belongsTo(User::class);
     }
 }

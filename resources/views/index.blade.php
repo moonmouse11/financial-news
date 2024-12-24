@@ -3,6 +3,10 @@
 @section('title', 'Financial News')
 
 @section('content')
+
+@dump($articles)
+
+
 <!-- Mobile menu -->
 <main id="content">
     <!-- hero big grid -->
@@ -41,7 +45,7 @@
                         <article class="flex-shrink max-w-full w-full sm:w-1/2">
                             <div class="relative hover-img max-h-48 overflow-hidden">
                                 <a href="#">
-                                    <img class="max-w-full w-full mx-auto h-auto" src="src/img/dummy/img2.jpg"
+                                    <img class="max-w-full w-full mx-auto h-auto" src="{{Vite::asset('resources/views/tailnews/src/img/dummy/img2.jpg')}}"
                                          alt="Image description">
                                 </a>
                                 <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
@@ -61,7 +65,7 @@
                         <article class="flex-shrink max-w-full w-full sm:w-1/2">
                             <div class="relative hover-img max-h-48 overflow-hidden">
                                 <a href="#">
-                                    <img class="max-w-full w-full mx-auto h-auto" src="src/img/dummy/img3.jpg"
+                                    <img class="max-w-full w-full mx-auto h-auto" src="{{Vite::asset('resources/views/tailnews/src/img/dummy/img3.jpg')}}"
                                          alt="Image description">
                                 </a>
                                 <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
@@ -81,7 +85,7 @@
                         <article class="flex-shrink max-w-full w-full sm:w-1/2">
                             <div class="relative hover-img max-h-48 overflow-hidden">
                                 <a href="#">
-                                    <img class="max-w-full w-full mx-auto h-auto" src="src/img/dummy/img4.jpg"
+                                    <img class="max-w-full w-full mx-auto h-auto" src="@vite('resources/views/tailnews/src/img/dummy/img4.jpg')"
                                          alt="Image description">
                                 </a>
                                 <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
@@ -101,7 +105,7 @@
                         <article class="flex-shrink max-w-full w-full sm:w-1/2">
                             <div class="relative hover-img max-h-48 overflow-hidden">
                                 <a href="#">
-                                    <img class="max-w-full w-full mx-auto h-auto" src="src/img/dummy/img5.jpg"
+                                    <img class="max-w-full w-full mx-auto h-auto" src="@vite('resources/views/tailnews/src/img/dummy/img5.jpg')"
                                          alt="Image description">
                                 </a>
                                 <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">

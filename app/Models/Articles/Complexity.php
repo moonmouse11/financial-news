@@ -17,8 +17,8 @@ class Complexity extends Model
         'created_at'
     ];
 
-    public function article()
+    public function articles()
     {
-        return $this->hasMany(Article::class);
+        return $this->hasMany(Article::class, 'complexity_id', 'id');
     }
 }
