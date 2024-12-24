@@ -9,7 +9,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $articles = Article::all()->;
+        $articles = Article::all()->toArray();
 
         return view('index', ['articles' => $articles]);
     }

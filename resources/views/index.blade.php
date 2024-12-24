@@ -4,10 +4,7 @@
 
 @section('content')
 
-@dump($articles)
 
-
-<!-- Mobile menu -->
 <main id="content">
     <!-- hero big grid -->
     <div class="bg-white py-6">
@@ -85,7 +82,7 @@
                         <article class="flex-shrink max-w-full w-full sm:w-1/2">
                             <div class="relative hover-img max-h-48 overflow-hidden">
                                 <a href="#">
-                                    <img class="max-w-full w-full mx-auto h-auto" src="@vite('resources/views/tailnews/src/img/dummy/img4.jpg')"
+                                    <img class="max-w-full w-full mx-auto h-auto" src="{{Vite::asset('resources/views/tailnews/src/img/dummy/img4.jpg')}}"
                                          alt="Image description">
                                 </a>
                                 <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
@@ -105,7 +102,7 @@
                         <article class="flex-shrink max-w-full w-full sm:w-1/2">
                             <div class="relative hover-img max-h-48 overflow-hidden">
                                 <a href="#">
-                                    <img class="max-w-full w-full mx-auto h-auto" src="@vite('resources/views/tailnews/src/img/dummy/img5.jpg')"
+                                    <img class="max-w-full w-full mx-auto h-auto" src="{{Vite::asset('resources/views/tailnews/src/img/dummy/img5.jpg')}}"
                                          alt="Image description">
                                 </a>
                                 <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
@@ -143,7 +140,7 @@
                         <div class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
                             <div class="flex flex-row sm:block hover-img">
                                 <a href="">
-                                    <img class="max-w-full w-full mx-auto" src="src/img/dummy/img6.jpg" alt="alt title">
+                                    <img class="max-w-full w-full mx-auto" src="{{Vite::asset('resources/views/tailnews/src/img/dummy/img6.jpg')}}" alt="alt title">
                                 </a>
                                 <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                                     <h3 class="text-lg font-bold leading-tight mb-2">
@@ -159,7 +156,7 @@
                         <div class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
                             <div class="flex flex-row sm:block hover-img">
                                 <a href="">
-                                    <img class="max-w-full w-full mx-auto" src="src/img/dummy/img7.jpg" alt="alt title">
+                                    <img class="max-w-full w-full mx-auto" src="{{Vite::asset('resources/views/tailnews/src/img/dummy/img7.jpg')}}" alt="alt title">
                                 </a>
                                 <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                                     <h3 class="text-lg font-bold leading-tight mb-2">
@@ -175,7 +172,7 @@
                         <div class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
                             <div class="flex flex-row sm:block hover-img">
                                 <a href="">
-                                    <img class="max-w-full w-full mx-auto" src="src/img/dummy/img8.jpg" alt="alt title">
+                                    <img class="max-w-full w-full mx-auto" src="{{Vite::asset('resources/views/tailnews/src/img/dummy/img8.jpg')}}" alt="alt title">
                                 </a>
                                 <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                                     <h3 class="text-lg font-bold leading-tight mb-2">
@@ -191,7 +188,7 @@
                         <div class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
                             <div class="flex flex-row sm:block hover-img">
                                 <a href="">
-                                    <img class="max-w-full w-full mx-auto" src="src/img/dummy/img9.jpg" alt="alt title">
+                                    <img class="max-w-full w-full mx-auto" src="{{Vite::asset('resources/views/tailnews/src/img/dummy/img9.jpg')}}" alt="alt title">
                                 </a>
                                 <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                                     <h3 class="text-lg font-bold leading-tight mb-2">
