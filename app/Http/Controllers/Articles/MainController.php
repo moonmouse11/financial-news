@@ -9,7 +9,9 @@ class MainController extends Controller
 {
     public function index()
     {
-        $articles = Article::all()->toArray();
+        $articles = Article::all()->where('category_id', '=', 1)->toArray();
+
+        dump($articles);
 
         return view('index', ['articles' => $articles]);
     }

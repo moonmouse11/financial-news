@@ -159,7 +159,7 @@
       <div class="mb-auto">
         <!--navigation-->
         <nav class="relative flex flex-wrap">
-          <div class="text-center py-4 w-full font-bold border-b border-gray-100">TAILNEWS</div>
+          <div class="text-center py-4 w-full font-bold border-b border-gray-100">FINANCIAL NEWS</div>
           <ul id="side-menu" class="w-full float-none flex flex-col">
             <li class="relative">
               <a href="#" class="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Home</a>
@@ -263,13 +263,12 @@
   </a>
 
   <!--Vendor js-->
-  <script src="../../js/vendors/hc-sticky/dist/hc-sticky.js"></script>
-  <script src="../../js/vendors/glightbox/dist/js/glightbox.min.js"></script>
-  <script src="../../js/vendors/@splidejs/splide/dist/js/splide.min.js"></script>
-  <script src="../../js/vendors/@splidejs/splide-extension-video/dist/js/splide-extension-video.min.js"></script>
-
+<script src="@vite('node_modules/hc-sticky/dist/hc-sticky.js')"></script>
+<script src="@vite('node_modules/glightbox/dist/js/glightbox.min.js')"></script>
+<script src="@vite('node_modules/@splidejs/splide/dist/js/splide.min.js')"></script>
+<script src="@vite('node_modules/@splidejs/splide-extension-video/dist/js/splide-extension-video.min.js')"></script>
   <!-- Start development js -->
-  <script src="../../js/theme.js"></script>
+<script src="@vite('resources/js/theme.js')"></script>
   <!-- End development js -->
 
 </body>
